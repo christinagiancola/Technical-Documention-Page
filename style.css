@@ -1,12 +1,54 @@
 :root {
-  --nav-bg-color: goldenrod;
+  --nav-bg-color: #034355;
   --nav-title-color: white;
-  --nav-link-color: white;
-  --nav-hover-color:  blue;
+  --nav-link-color: #e9ceb5;
+  --nav-hover-color:  #f7a470;
+  --code-bg-color: #e9ceb5; 
+  --warning-bg-color: #f7a470;
+  --tip-bg-color: #83af9b;
+  --note-bg-color: #f7a470;
+}
+
+@media screen and (min-width: 1045px) {
+  #narbar {display: none;}
 }
 
 body {
   font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+}
+
+pre {
+  background-color: var(--code-bg-color);
+  padding: 7px;
+}
+
+code {
+  background-color:var(--code-bg-color);
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+.warning-box {
+  background-color: var(--warning-bg-color);
+  padding: 7px;
+}
+
+.tip-box {
+  background-color: var(--tip-bg-color);
+  padding: 7px;
+}
+
+.note-box {
+  background-color: var(--note-bg-color);
+  padding: 7px;
+}
+
+.nav-title {
+  color: var(--nav-title-color);
 }
 
 #container {
@@ -20,16 +62,11 @@ body {
   height: 100%;
   width: 250px;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
   background-color: var(--nav-bg-color);
   overflow-x: hidden;
   padding: 20px 5px;
-}
-
-#nav-title {
-  color: var(--nav-title-color);
 }
 
 #navbar a {
@@ -40,9 +77,6 @@ body {
 
 #navbar a:hover {
   color: var(--nav-hover-color);
-}
-
-#back-to-top {
 }
 
 #main-doc {
