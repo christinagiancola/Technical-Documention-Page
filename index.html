@@ -13,12 +13,14 @@
   <div id="container">
 
     <nav id="navbar">
-      <h1 class="nav-title">React Main Concepts</h1>
-      <h2 class="nav-title subtitle">React is a Javascript Library for building user interfaces. Here we summarize some of the library's main concepts.</h2>
+      <header>
+        <h1 class="nav-title">React Main Concepts</h1>
+        <h2 class="nav-title subtitle">React is a Javascript Library for building user interfaces. Here we summarize some of the library's main concepts.</h2>
+      </header>
       <span id="nav-links">
         <a href="#Hello_World" class="nav-link">Hello World</a>
         <a href="#Introducing_JSX" class="nav-link">Introducing JSX</a>
-        <a href="#Rendering Elements" class="nav-link">Rendering Elements</a>
+        <a href="#Rendering_Elements" class="nav-link">Rendering Elements</a>
         <a href="#Components_and_Props" class="nav-link">Components and Props</a>
         <a href="#State_and_Lifecycle" class="nav-link">State and Lifecycle</a>
         <a href="#Handling_Events" class="nav-link">Handling Events</a>
@@ -28,15 +30,14 @@
         <a href="#Lifting_State_Up" class="nav-link">Lifting State Up</a>
         <a href="#Composition_vs_Inheritance" class="nav-link">Composition vs Inheritance</a>
         <a href="#Thinking_In_React" class="nav-link">Thinking In React</a>
-        <a href="#Hello_World" class="nav-link" id="back-to-top">Back to Top</a>
       </span>
     </nav>
 
-    <div id="main-doc">
+  <main id="main-doc">
 
 <!-- HELLO WORLD -->
-      <div class="main-section" id="Hello_World">
-        <h2>Hello World</h2>
+      <section class="main-section" id="Hello_World">
+        <header><h2>Hello World</h2></header>
         <p>The smallest React example looks like this:</p>
         <pre>
           <code>
@@ -47,11 +48,11 @@ document.getElementById('root')
           </code>
         </pre>
         <p>It displays a heading saying “Hello, world!” on the page.</p>
-      </div>
+      </section>
 
 <!-- INTRODUCING JSX -->
-      <div class="main-section" id="Introducing_JSX">
-        <h2>Introducing JSX</h2>
+      <section class="main-section" id="Introducing_JSX">
+        <header><h2>Introducing JSX</h2></header>
         <p>Consider this variable declaration:</p>
         <pre>
           <code>
@@ -205,12 +206,12 @@ const element = <<span>h1</span>>{title}<<span>/h1</span>>;
           <h4 class="tip">Tip:</h4>
           <p> We recommend using the “Babel” language definition for your editor of choice so that both ES6 and JSX code is properly highlighted.</p>
         </div>
-      </div>
+      </section>
 
 
 <!-- RENDERING ELEMENTS -->
-      <div class="main-section" id="Rendering Elements">
-        <h2>Rendering Elements</h2>
+      <section class="main-section" id="Rendering_Elements">
+        <header><h2>Rendering Elements</h2></header>
         <h3 class="subtitle">Elements are the smallest building blocks of React apps.</h3>
         <p>An element describes what you want to see on the screen:</p>
         <pre>
@@ -263,11 +264,11 @@ setInterval(tick, 1000);
         <p>React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.</p>
         <p>Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.</p>
         <p>In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.</p>
-      </div>
+      </section>
 
 <!-- COMPONENTS AND PROPS -->
-      <div class="main-section" id="Components_and_Props">
-        <h2>Components and Props</h2>
+      <section class="main-section" id="Components_and_Props">
+        <header><h2>Components and Props</h2></header>
         <h3 class="subtitle">Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components.</h3>
         <p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</p>
         <h3>Function and Class Components</h3>
@@ -480,11 +481,11 @@ function withdraw(account, amount) {
         <p>React is pretty flexible but it has a single strict rule:</p>
         <p><b>All React components must act like pure functions with respect to their props.</b></p>
         <p>Of course, application UIs are dynamic and change over time. In the next section, we will introduce a new concept of “state”. State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.</p>
-      </div>
+      </section>
 
 <!-- STATE AND LIFECYCLE -->
-      <div class="main-section" id="State_and_Lifecycle">
-        <h2>State and Lifecycle</h2>
+      <section class="main-section" id="State_and_Lifecycle">
+        <header><h2>State and Lifecycle</h2></header>
         <p>Consider the ticking clock example from one of the previous sections. In <a href="#Rendering Elements">Rendering Elements</a>, we have only learned one way to update the UI. We call <code>ReactDOM.render()</code> to change the rendered output:</p>
         <pre>
           <code>
@@ -875,11 +876,11 @@ ReactDOM.render(
         </pre>
         <p>Each <code>Clock</code> sets up its own timer and updates independently.</p>
         <p>In React apps, whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.</p>
-      </div>
+      </section>
 
 <!-- HANDLING EVENTS -->
-      <div class="main-section" id="Handling_Events">
-        <h2>Handling Events</h2>
+      <section class="main-section" id="Handling_Events">
+        <header><h2>Handling Events</h2></header>
         <h3 class="subtitle">Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:</h3>
         <ul>
           <li>React events are named using camelCase, rather than lowercase.</li>
@@ -1015,11 +1016,11 @@ class LoggingButton extends React.Component {
         <p>The above two lines are equivalent, and use arrow functions and Function.prototype.bind respectively.</p>
         <p>In both cases, the <code>e</code> argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with <code>bind</code> any further arguments are automatically forwarded.</p>
         
-      </div>
+      </section>
 
 <!-- CONDITIONAL RENDERING -->
-      <div class="main-section" id="Conditional_Rendering">
-        <h2>Conditional Rendering</h2>
+      <section class="main-section" id="Conditional_Rendering">
+        <header><h2>Conditional Rendering</h2></header>
         <h3 class="subtitle">In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.</h3>
         <p>Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.</p>
         <p>Consider these two components:</p>
@@ -1242,11 +1243,11 @@ ReactDOM.render(
         </pre>
         <p>Returning <code>null</code> from a component’s <code>render</code> method does not affect the firing of the component’s lifecycle methods. For instance <code>componentDidUpdate</code> will still be called.</p>
 
-      </div>
+      </section>
 
 <!-- LISTS AND KEYS -->
-      <div class="main-section" id="Lists_and_Keys">
-        <h2>Lists and Keys</h2>
+      <section class="main-section" id="Lists_and_Keys">
+        <header><h2>Lists and Keys</h2></header>
         <h3 class="subtitle">First, let’s review how you transform lists in JavaScript.</h3>
         <p>Given the code below, we use the <code>map()</code> function to take an array of <code>numbers</code> and double their values. We assign the new array returned by <code>map()</code> to the variable <code>doubled</code> and log it:</p>
         <pre>
@@ -1511,11 +1512,11 @@ function NumberList(props) {
         </pre>
         <p>Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the <code>map()</code> body is too nested, it might be a good time to extract a component.</p>
 
-      </div>
+      </section>
 
 <!-- FORMS -->
-      <div class="main-section" id="Forms">
-        <h2>Forms</h2>
+      <section class="main-section" id="Forms">
+        <header><h2>Forms</h2></header>
         <h3 class="subtitle">HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:</h3>
         <pre>
           <code>
@@ -1772,11 +1773,11 @@ setTimeout(function() {
         <h3>Fully-Fledged Solutions</h3>
         <p>If you’re looking for a complete solution including validation, keeping track of the visited fields, and handling form submission, Formik is one of the popular choices. However, it is built on the same principles of controlled components and managing state — so don’t neglect to learn them.</p>
 
-      </div>
+      </section>
 
 <!-- LIFTING STATE UP -->
-      <div class="main-section" id="Lifting_State_Up">
-        <h2>Lifting State Up</h2>
+      <section class="main-section" id="Lifting_State_Up">
+        <header><h2>Lifting State Up</h2></header>
         <h3 class="subtitle">Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.</h3>
         <p>In this section, we will create a temperature calculator that calculates whether the water would boil at a given temperature.</p>
         <p>We will start with a component called <code>BoilingVerdict</code>. It accepts the <code>celsius</code> temperature as a prop, and prints whether it is enough to boil the water:</p>
@@ -2061,11 +2062,11 @@ class Calculator extends React.Component {
         <p>If something can be derived from either props or state, it probably shouldn’t be in the state. For example, instead of storing both <code>celsiusValue</code> and <code>fahrenheitValue</code>, we store just the last edited <code>temperature</code> and its <code>scale</code>. The value of the other input can always be calculated from them in the <code>render()</code> method. This lets us clear or apply rounding to the other field without losing any precision in the user input.</p>
         <p>When you see something wrong in the UI, you can use React Developer Tools to inspect the props and move up the tree until you find the component responsible for updating the state. This lets you trace the bugs to their source.</p>
 
-      </div>
+      </section>
 
 <!-- COMPOSITION VS INHERITANCE -->
-      <div class="main-section" id="Composition_vs_Inheritance">
-        <h2>Composition vs Inheritance</h2>
+      <section class="main-section" id="Composition_vs_Inheritance">
+        <header><h2>Composition vs Inheritance</h2></header>
         <h3 class="subtitle">React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.</h3>
         <p>In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.</p>
         <h3>Containment</h3>
@@ -2210,11 +2211,11 @@ class SignUpDialog extends React.Component {
         <p>Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.</p>
         <p>If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it.</p>
 
-      </div>
+      </section>
 
 <!-- THINKING IN REACT -->
-      <div class="main-section" id="Thinking_In_React">
-        <h2>Thinking In React</h2>
+      <section class="main-section" id="Thinking_In_React">
+        <header><h2>Thinking In React</h2></header>
         <h3 class="subtitle">React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.</h3>
         <p>One of the many great parts of React is how it makes you think about apps as you build them. In this document, we’ll walk you through the thought process of building a searchable product data table using React.</p>
         <h3>Start With A Mock</h3>
@@ -2317,10 +2318,11 @@ class SignUpDialog extends React.Component {
         <h3>And That’s It</h3>
         <p>Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you’re used to, remember that code is read far more than it’s written, and it’s less difficult to read this modular, explicit code. As you start to build large libraries of components, you’ll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink.</p>
 
-      </div>
+      </section>
 
     </div>
-  </div>
+  </main>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
 
